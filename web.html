@@ -5,36 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fila Ya - Turnos sin esperas</title>
   <style>
+    * {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background-color: #000;
       color: #eee;
-      scroll-behavior: smooth;
     }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 40px 20px 20px;
       background-color: #000;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    header img {
+    .header-logo img {
       max-width: 150px;
     }
-
-    header h1 {
+    .header-text {
+      text-align: right;
+    }
+    .header-text h1 {
+      margin: 0;
       font-size: 2.5em;
-      margin: 10px 0 0;
       color: #00e15d;
     }
-
-    p.tagline {
+    .header-text p {
+      margin: 0;
       font-size: 1.2em;
       color: #aaa;
-      margin-top: 5px;
     }
-
+    nav {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+      border-top: 2px solid #00e15d;
+      border-bottom: 2px solid #00e15d;
+    }
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00e15d;
+    }
     section {
       max-width: 800px;
       margin: 40px auto;
@@ -42,16 +64,13 @@
       background: #111;
       border-radius: 10px;
     }
-
     h2 {
       color: #00e15d;
     }
-
     .cta {
       text-align: center;
       margin: 50px auto;
     }
-
     .cta a {
       background: #00e15d;
       color: #000;
@@ -61,54 +80,75 @@
       border-radius: 8px;
       transition: background 0.3s ease;
     }
-
     .cta a:hover {
       background: #00c44a;
     }
-
     footer {
       text-align: center;
       font-size: 0.9em;
       color: #666;
       padding: 30px 10px;
     }
+    @media (max-width: 600px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-text {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="Logo Fila Ya">
-  <h1>Fila Ya</h1>
-  <p class="tagline">Tu turno, sin esperas</p>
-</header>
+<div class="header-container">
+  <div class="header-logo">
+    <img src="logo.png" alt="Logo Fila Ya">
+  </div>
+  <div class="header-text">
+    <h1>Fila Ya</h1>
+    <p>Tu turno, sin esperas</p>
+  </div>
+</div>
 
-<section>
+<nav>
+  <a href="#que-es">¿Qué es?</a>
+  <a href="#registro">Registro</a>
+  <a href="#usuarios">Usuarios</a>
+  <a href="#notificaciones">Notificaciones</a>
+  <a href="#nosotros">Sobre Nosotros</a>
+  <a href="#descarga">Descargar</a>
+</nav>
+
+<section id="que-es">
   <h2>¿Qué es Fila Ya?</h2>
   <p>Fila Ya es una app que mejora tu experiencia al recibir atención. Organiza mejor tu tiempo y accedé a servicios sin hacer fila. Recibí notificaciones automáticas y seguí el avance de la fila en tiempo real desde tu celular.</p>
 </section>
 
-<section>
+<section id="registro">
   <h2>Registro simple</h2>
   <p>Registrate con tu correo y comenzá en menos de un minuto. Si ya tenés cuenta, iniciá sesión directamente.</p>
 </section>
 
-<section>
+<section id="usuarios">
   <h2>Dos tipos de usuarios</h2>
   <p><strong>Proveedor de servicios:</strong> gestioná tus turnos, filas y atención al cliente con eficiencia.</p>
   <p><strong>Cliente:</strong> reservá tu lugar, escaneá un código QR, recibí alertas y calificá la atención.</p>
 </section>
 
-<section>
+<section id="notificaciones">
   <h2>Notificaciones inteligentes</h2>
   <p>Te avisamos cuando se acerque tu turno. “¡Quedan 5 personas delante tuyo!” y “¡Es tu turno!” son solo el comienzo.</p>
 </section>
 
-<section>
+<section id="nosotros">
   <h2>Sobre Nosotros</h2>
   <p>Somos un equipo de desarrolladores comprometidos con hacer que el tiempo de las personas valga más. Creamos Fila Ya como respuesta a una necesidad real: evitar esperas innecesarias y optimizar cada minuto. Creemos en la tecnología como puente entre eficiencia y bienestar. Nuestro objetivo es transformar las filas en experiencias simples, organizadas y ágiles.</p>
 </section>
 
-<section class="cta">
+<section class="cta" id="descarga">
   <a href="#">Descargá la app ahora</a>
 </section>
 
